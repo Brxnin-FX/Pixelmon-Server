@@ -1,0 +1,20 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:java8
+    container_name: pixelmon-server
+    ports:
+      - "25565:25565" # Porta padrão do Minecraft
+    environment:
+      EULA: "TRUE"                 # Aceite o EULA
+      TYPE: "FORGE"                # Servidor Forge (necessário para mods)
+      VERSION: "1.16.5"            # Versão do Minecraft (escolha compatível com Pixelmon)
+      FORGEVERSION: "36.1.0"      # Versão do Forge (compatível com Pixelmon)
+      ENABLE_RCON: "true"          # Habilita o RCON (opcional)
+      RCON_PASSWORD: "pixelmon123" # Senha do RCON
+    volumes:
+      - ./data:/data               # Persistência dos dados do servidor
+      - ./mods:/mods               # Pasta de mods
+      - ./config:/config           # Configuração personalizada (opcional)
+    stdin_open: true
+    tty: true
+    restart: always
