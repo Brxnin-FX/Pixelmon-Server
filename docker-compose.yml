@@ -8,9 +8,13 @@ services:
       EULA: "TRUE"                 # Aceite o EULA
       TYPE: "FORGE"                # Servidor Forge (necessário para mods)
       VERSION: "1.16.5"            # Versão do Minecraft (escolha compatível com Pixelmon)
-      FORGEVERSION: "36.1.0"      # Versão do Forge (compatível com Pixelmon)
+      FORGEVERSION: "36.2.20"       # Versão do Forge (compatível com Pixelmon)
       ENABLE_RCON: "true"          # Habilita o RCON (opcional)
       RCON_PASSWORD: "pixelmon123" # Senha do RCON
+      MODRINTH_PROJECTS: |
+        pixelmon
+        jei
+        journeymap
     volumes:
       - ./data:/data               # Persistência dos dados do servidor
       - ./mods:/mods               # Pasta de mods
